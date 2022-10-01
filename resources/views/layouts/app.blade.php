@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<!- Exportação bootstrap v5.2 ->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>@yield('title') - CRUD</title>
@@ -9,6 +10,8 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
 </head>
 <body>
+
+	<!- Navbar ->
 	<nav class="navbar navbar-expand-lg text-light shadow" style="background-color: #270722;">
 		<div class="container">
 			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-boxes me-2" viewBox="0 0 16 16">
@@ -34,6 +37,8 @@
 						<a href="{{ route('funcionarios-sobre') }}" class="nav-link text-light">Sobre</a>
 					</li>
 				</ul>
+
+				<!- Se usuário ñ estiver logado mostra os buttons para cadastrar ou logar, caso esteja mostra o dropdown com o nome do usuário ->
 				@if($name == null)
 					<form id="entrar">
 						<a href="{{ route('funcionarios-login-signup') }}" class="btn btn-outline-light me-2">Cadastre-se</a>
@@ -67,6 +72,7 @@
 
 	@yield('content')
 
+	<!- Footer ->
 	<footer class="bg-light bg-gradient text-dark text-center text-lg-start fixed-bottom">
 		<div class="text-center p-3 text-light " style="background-color: #270722;">
 			Feito por:
